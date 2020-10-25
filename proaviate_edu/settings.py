@@ -17,7 +17,7 @@ import dj_database_url
 
 # Importing variables for DEV environment
 from os import path
-if path.exists('../env.py'):
+if path.exists('env.py'):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,8 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['proaviate-lms.herokuapp.com', 'localhost']
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'hello',
 
     # Other
     'storages',
@@ -121,6 +122,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
