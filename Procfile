@@ -1,1 +1,1 @@
-web: gunicorn proaviate_edu.wsgi.application
+web: gunicorn proaviate_edu.wsgi:application
