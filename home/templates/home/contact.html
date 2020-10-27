@@ -1,0 +1,155 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+
+<div id="map" class="big-map"></div>
+
+<div class="main main-raised">
+  <div class="contact-content">
+    <div class="container">
+      <h2 class="title">Send us a message</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="description">
+            If you have any question, please contact us. We&apos;ll get in touch
+            with you as soon as possible.<br><br>
+          </p>
+          <form role="form" id="contact-form" method="post">
+            <div class="form-group has-info">
+              <label for="name" class="bmd-label-floating">Your name</label>
+              <input type="text" class="form-control" id="name" />
+            </div>
+            <div class="form-group has-info">
+              <label for="exampleInputEmails" class="bmd-label-floating"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmails"
+              />
+              <span class="bmd-help"
+                >We'll never share your email with anyone else.</span
+              >
+            </div>
+            <div class="form-group has-info">
+              <label for="phone" class="bmd-label-floating">Phone</label>
+              <input type="text" class="form-control" id="phone" />
+            </div>
+            <div class="form-group label-floating has-info">
+              <label
+                class="form-control-label bmd-label-floating"
+                for="message"
+              >
+                Your message</label
+              >
+              <textarea class="form-control" rows="6" id="message"></textarea>
+            </div>
+            <div class="submit text-center">
+              <input
+                type="submit"
+                class="btn btn-info btn-raised"
+                value="Contact Us"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4 ml-auto">
+          <div class="info info-horizontal">
+            <div class="icon icon-info">
+              <i class="material-icons">pin_drop</i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Find us at the office</h4>
+              <p>
+                Krajná 29<br />
+                821 04 Bratislava,<br />
+                Slovak Republic
+              </p>
+            </div>
+          </div>
+          <div class="info info-horizontal">
+            <div class="icon icon-info">
+              <i class="material-icons">phone</i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Give us a ring</h4>
+              <p>
+                +421 903 767 749 Zuzana (SPL, FI(S), AEFC)<br>
+                +421 949 406 856 Boris (PPL, UAV)<br>
+                +421 905 286 182 Patrik (ATPL, RADIO)<br>
+              </p>
+            </div>
+          </div>
+          <div class="info info-horizontal">
+            <div class="icon icon-info">
+              <i class="material-icons">business_center</i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Legal Information</h4>
+              <p>
+                PROAVIATE, s. r. o.<br>
+                Bosákova 5/A, Bratislava, 85104<br>
+                IČO&#xB7; 52 254 526<br>
+                DIČ&#xB7; 212 096 9356<br>
+                IBAN&#xB7; SK48 0900 0000 0051 5646 8796<br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} 
+
+{% block postloadjs %}
+<!--  Google Maps Plugin  -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initMap&libraries=&v=weekly"
+  defer
+></script>
+<script>
+  function initMap() {
+    const proaviate = { lat: 48.179531, lng: 17.174560 };
+    // Styles a map in night mode.
+    const map = new google.maps.Map(document.getElementById("map"), {
+      // The location of PROAVIATE
+      center: { lat: 48.179901, lng: 17.173 },
+      zoom: 17,
+    });
+    const contentString = 
+        "<div id='content'>" +
+        "<div id='siteNotice'>" +
+        "</div>" +
+        "<img src='{{ MEDIA_URL }}web-design/PROAVIATE-logo.png' alt='PROAVIATE-LOGO'>" +
+        "<h3 id='firstHeading' class='firstHeading'>PROAVIATE, s. r. o.</h3>" +
+        "<div id='bodyContent'>" +
+        "<p>Krajna 29<br> 824 01 Bratislava<br> SLOVAKIA <br><br>" +
+        "<i class='material-icons'>phone</i> +421 903 767 749 Zuzana (SPL, FI(S), AEFC) <br>" +
+        "<i class='material-icons'>phone</i> +421 949 406 856 Boris (PPL, UAV)<br>" +
+        "<i class='material-icons'>phone</i> +421 905 286 182 Patrik (ATPL, RADIO)<br>" +
+        "</p><br>" +
+        "<p><i class='material-icons'>email</i> info@proaviate.sk</p><br>" +
+        "<p><a href='https://www.proaviate.sk/'>www.proaviate.sk</a></p>" +
+        "</div>" +
+        "</div>";
+
+    const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    });
+
+    // The marker, positioned at PROAVIATE
+    const marker = new google.maps.Marker({
+      position: proaviate,
+      map: map,
+    });
+
+    marker.addListener("click", () => {
+    infowindow.open(map, marker);
+    });
+  }
+</script>
+{% endblock %}

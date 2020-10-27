@@ -15,9 +15,11 @@
 
     {% block corecss %}
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link href="{% static 'vendors/creative-tim/css/material-kit.css' %}" rel="stylesheet" />
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/contact.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -51,7 +53,7 @@
   
   </head>
   <body>
-  <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg"  color-on-scroll="100">
+  <nav class="navbar fixed-top navbar-expand-lg {% if request.get_full_path == '/contact' %} bg-dark {% else %} navbar-transparent navbar-color-on-scroll {% endif %}"  color-on-scroll="100">
   <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="{% url 'home' %}">
@@ -69,7 +71,7 @@
       <div class="collapse navbar-collapse">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a href="#" class="nav-link">
+				<a href="{% url 'home' %}" class="nav-link">
 					<i class="material-icons">home</i> Home
 				</a>
 			</li>
@@ -83,8 +85,13 @@
 					<i class="material-icons">people</i> Our Team
 				</a>
 			</li>
+            <li class="nav-item">
+				<a href="{% url 'contact' %}" class="nav-link">
+					<i class="material-icons">phone</i> Contact
+				</a>
+			</li>
 			<li class="nav-item dropdown button-container iframe-extern">
-				<a class="dropdown-toggle btn btn-info btn-round btn-block" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+				<a class="dropdown-toggle btn btn-info btn-block" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false">
 					<i class="material-icons">account_circle</i> Account
 				</a>
@@ -141,7 +148,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{% url 'home' %}">
               Home
             </a>
           </li>
@@ -153,6 +160,11 @@
           <li>
             <a href="#">
               Our Team
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'contact' %}">
+              Contact
             </a>
           </li>
           <li>

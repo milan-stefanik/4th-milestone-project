@@ -1,34 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* NAVIGATION BAR */
+/* ----------------------- NAVIGATION BAR ----------------------- */
 .navbar-brand {
     font-family: 'Montserrat', 'sans-serif';
     font-weight: 500;
-    font-size: 2rem !important;
+    font-size: 1.3rem !important;
 }
 
 .navbar-brand span {
     color: #00bcd4 !important;
 }
 
-
-.nav-item a {
-    font-size: 1rem !important;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(200, 200, 200, 0.4) !important;
-    background-color: rgba(200, 200, 200, 0.4) !important;
-    border-radius: 30px !important;
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar .material-icons {
     font-size: 1.5rem !important;
-}
-
-.dropdown-item {
-    font-size: 1rem !important;
 }
 
 .navbar .dropdown-item:hover,
@@ -39,9 +27,9 @@
 }
 
 
-/* FOOTER */ 
+/* ----------------------- FOOTER ----------------------- */ 
 .footer ul li a {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
 }
 
 .footer ul li a:hover,
