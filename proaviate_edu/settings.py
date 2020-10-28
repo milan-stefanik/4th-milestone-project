@@ -54,6 +54,8 @@ INSTALLED_APPS = [
 
     # Other
     'storages',
+    'phonenumber_field',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'proaviate_edu.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -90,6 +94,8 @@ TEMPLATES = [
         },
     },
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -201,7 +207,7 @@ if 'USE_AWS' in os.environ:
 # Email settings
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'example@proaviate.sk'
+    DEFAULT_FROM_EMAIL = 'fly.very.high.787@gmail.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True

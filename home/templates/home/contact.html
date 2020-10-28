@@ -1,5 +1,6 @@
 {% extends "base.html" %} 
-{% load static %} 
+{% load static %}
+{% load crispy_forms_tags %} 
 
 {% block content %}
 
@@ -15,37 +16,15 @@
             If you have any question, please contact us. We&apos;ll get in touch
             with you as soon as possible.<br><br>
           </p>
-          <form role="form" id="contact-form" method="post">
-            <div class="form-group has-info">
-              <label for="name" class="bmd-label-floating">Your name</label>
-              <input type="text" class="form-control" id="name" />
-            </div>
-            <div class="form-group has-info">
-              <label for="exampleInputEmails" class="bmd-label-floating"
-                >Email address</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmails"
-              />
-              <span class="bmd-help"
-                >We'll never share your email with anyone else.</span
-              >
-            </div>
-            <div class="form-group has-info">
-              <label for="phone" class="bmd-label-floating">Phone</label>
-              <input type="text" class="form-control" id="phone" />
-            </div>
-            <div class="form-group label-floating has-info">
-              <label
-                class="form-control-label bmd-label-floating"
-                for="message"
-              >
-                Your message</label
-              >
-              <textarea class="form-control" rows="6" id="message"></textarea>
-            </div>
+          <form role="form" id="contact-form" method="post" novalidate>
+            {% csrf_token %}
+            <div class="form-group has-info">{{ form.first_name | as_crispy_field }}</div>
+            <div class="form-group has-info">{{ form.last_name | as_crispy_field }}</div>
+            <div class="form-group has-info">{{ form.email | as_crispy_field }}</div>
+            <div class="form-group has-info">{{ form.phone| as_crispy_field }}</div>
+            <div class="form-group has-info">{{ form.subject| as_crispy_field }}</div>
+            <div class="form-group has-info">{{ form.message| as_crispy_field }}</div>
+            <div class="form-group has-info">{{ form.send_copy| as_crispy_field }}</div>
             <div class="submit text-center">
               <input
                 type="submit"
@@ -76,9 +55,9 @@
             <div class="description">
               <h4 class="info-title">Give us a ring</h4>
               <p>
-                +421 903 767 749 Zuzana (SPL, FI(S), AEFC)<br>
-                +421 949 406 856 Boris (PPL, UAV)<br>
-                +421 905 286 182 Patrik (ATPL, RADIO)<br>
+                +421 903 767 749 - Zuzana (SPL, FI(S), AEFC)<br>
+                +421 949 406 856 - Boris (PPL, UAV)<br>
+                +421 905 286 182 - Patrik (ATPL, RADIO)<br>
               </p>
             </div>
           </div>
@@ -90,10 +69,11 @@
               <h4 class="info-title">Legal Information</h4>
               <p>
                 PROAVIATE, s. r. o.<br>
-                Bosákova 5/A, Bratislava, 85104<br>
-                IČO&#xB7; 52 254 526<br>
-                DIČ&#xB7; 212 096 9356<br>
-                IBAN&#xB7; SK48 0900 0000 0051 5646 8796<br>
+                Bosákova 5/A, Bratislava, 851 04<br>
+                <br>
+                IČO: 52 254 526<br>
+                DIČ: 212 096 9356<br>
+                IBAN: SK48 0900 0000 0051 5646 8796<br>
               </p>
             </div>
           </div>

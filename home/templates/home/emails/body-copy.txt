@@ -1,0 +1,25 @@
+Dear {{ messageData.first_name }} {{ messageData.last_name }},
+
+Thank you very much for your message. Our team will contact you soon.
+
+Copy of your message you sent to us through our website can be found below.
+
+Best regards,
+
+PROAVIATE team
+
+
+Your Message:
+
+Message received from:
+First Name: {{ messageData.first_name }}
+Last Name: {{ messageData.last_name }}
+E-mail:  {{ messageData.email }}
+Phone Number:  {{ messageData.phone }}
+
+Subject:
+{{ messageData.subject }} 
+
+
+Message:
+{{ messageData.message }}

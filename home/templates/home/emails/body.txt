@@ -1,0 +1,12 @@
+Message received from:
+First Name: {{ messageData.first_name }}
+Last Name: {{ messageData.last_name }}
+E-mail:  {{ messageData.email.lower }}
+Phone Number:  {{ messageData.phone }}
+
+Subject:
+{{ messageData.subject }} 
+
+
+Message:
+{{ messageData.message }}
