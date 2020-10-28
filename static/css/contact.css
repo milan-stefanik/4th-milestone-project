@@ -7,3 +7,10 @@
     padding-top: 0px;
     padding-bottom: 10px
 }
+
+#map {
+    height: 55vh;
+    width: 100%;
+    display: block;
+    position: relative;
+}

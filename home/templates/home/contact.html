@@ -97,7 +97,7 @@
     // Styles a map in night mode.
     const map = new google.maps.Map(document.getElementById("map"), {
       // The location of PROAVIATE
-      center: { lat: 48.179901, lng: 17.173 },
+      center: { lat: 48.179531, lng: 17.174560 },
       zoom: 17,
     });
     const contentString = 
@@ -126,8 +126,8 @@
       position: proaviate,
       map: map,
     });
-
-    marker.addListener("click", () => {
+    
+    marker.addListener("onclick", () => {
     infowindow.open(map, marker);
     });
   }
