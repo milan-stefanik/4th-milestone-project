@@ -1,0 +1,28 @@
+/* Check box */
+.form-check .form-check-input:checked ~ .form-check-sign .check {
+    background: #00bcd4 !important; 
+}
+
+.card-body {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.card-login .form-check label {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.card-footer {
+    margin-top: 20px !important;
+}
+
+.form-link {
+    color: #00bcd4;
+    font-weight: 400;
+}
+
+.form-link:hover {
+    color: #00bcd4;
+    text-decoration: underline;
+}

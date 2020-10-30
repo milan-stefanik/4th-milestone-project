@@ -51,3 +51,6 @@ class ContactForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_show_labels = True
         self.helper.label_class = 'bmd-label-floating'
+        self.fields['send_copy'].widget.attrs.update({
+            'class': 'form-check-input'
+        })
