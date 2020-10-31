@@ -14,7 +14,7 @@
     {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
     {% endif %}
-    <div class="card card-login card-hidden">
+    <div class="card card-hidden">
 		<div class="card-header card-header-info text-center">
 			<h4 class="card-title">{% trans "LOGIN" %}</h4>
 		</div>
@@ -34,7 +34,7 @@
             <a class="form-link" href="{% url 'account_reset_password' %}">{% trans "Did you forget password?" %}</a>
         </div>
         <div class="card-footer justify-content-center">
-            <button class="btn btn-info btn-link" type="submit">{% trans "Let's Go" %}</button>
+            <button class="btn btn-info btn-primary btn-raised" type="submit">{% trans "Let's Go" %}</button>
         </div>
 	</div>
 </form>    

@@ -101,10 +101,9 @@ TEMPLATES = [
 ACCOUNT_FORMS = {
     'login': 'users.forms.MyCustomLoginForm',
     'signup': 'users.forms.MyCustomSignupForm',
-    'reset_password': 'users.forms.MyCustomResetPassword',
+    'reset_password': 'users.forms.MyCustomResetPasswordForm',
+    'reset_password_from_key': 'users.forms.MyCustomResetPasswordKeyForm',
 }
-
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -125,6 +124,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 
 WSGI_APPLICATION = 'proaviate_edu.wsgi.application'
 

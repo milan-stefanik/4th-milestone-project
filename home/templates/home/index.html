@@ -8,11 +8,15 @@
   <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="title">Our e-learning platform</h1>
-          <h4>To support your learning path towards aviation proficiency.</h4>
-          <h4>To access our e-learning content, please login.</h4>
+          <h1 class="title">PROAVIATE LMS</h1>
+          <h3>A modern platform to support your learning path towards aviation proficiency.</h3>
           <br>
-          <a href="#" target="_blank" class="btn btn-info btn-raised btn-lg">
+          <h5>To access our e-learning content, please login. If you don't have an account yet, please register.</h5>
+          <br>
+          <a href="{% url 'account_signup' %}" class="btn btn-info btn-raised btn">
+            <i class="fas fa-file-signature"></i> Register
+          </a>
+          <a href="{% url 'account_login' %}" class="btn btn-info btn-raised btn">
             <i class="fas fa-sign-in-alt"></i> Login
           </a>
         </div>
