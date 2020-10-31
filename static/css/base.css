@@ -55,3 +55,12 @@
 .footer ul li a:focus {
     color: #00bcd4;
 }
+
+.transparent .footer {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    bottom: 0;
+    color: #fff;
+    z-index: 10;
+}

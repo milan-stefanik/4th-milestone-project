@@ -1,6 +1,6 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
-from allauth.account.forms import LoginForm
+from allauth.account.forms import LoginForm, SignupForm
 from crispy_forms.helper import FormHelper
 
 
@@ -14,10 +14,24 @@ class MyCustomLoginForm(LoginForm):
         for fieldname, field in self.fields.items():
             field.widget.attrs.update({
                 'placeholder': '',
-                'class': 'form-control'
+                'class': 'form-control',
             })
             del field.widget.attrs['placeholder']
         self.fields['login'].label = 'Username or e-mail'
         self.fields['remember'].widget.attrs.update({
             'class': 'form-check-input'
         })
+
+
+class MyCustomSignupForm(SignupForm):
+    def __init__(self, *args, **kwargs):
+        super(MyCustomSignupForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_show_labels = True
+        self.helper.label_class = 'bmd-label-floating'
+        for fieldname, field in self.fields.items():
+            field.widget.attrs.update({
+                'placeholder': '',
+                'class': 'form-control',
+            })
+            del field.widget.attrs['placeholder']

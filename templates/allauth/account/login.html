@@ -16,7 +16,7 @@
 			<h4 class="card-title">{% trans "LOGIN" %}</h4>
 		</div>
 		<div class="card-body ">
-            <p class="card-description text-center">{% blocktrans %}Do you need account? Please
+            <p class="card-description text-center"><br>{% blocktrans %}Do you need account? Please
             <a class="form-link" href="{{ signup_url }}">register</a>. {% endblocktrans %}</p>
 		    <div class="form-group has-info">{{ form.login | as_crispy_field }}</div>
             <div class="form-group has-info">{{ form.password | as_crispy_field }}</div>

@@ -98,7 +98,10 @@ TEMPLATES = [
     },
 ]
 
-ACCOUNT_FORMS = {'login': 'users.forms.MyCustomLoginForm'}
+ACCOUNT_FORMS = {
+    'login': 'users.forms.MyCustomLoginForm',
+    'signup': 'users.forms.MyCustomSignupForm',
+}
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
