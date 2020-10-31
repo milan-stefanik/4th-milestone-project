@@ -7,7 +7,7 @@
 
 {% block inner_content %}
 
-<form class="form" method="POST" action="{% url 'account_logout' %}">
+<form class="form" method="POST" action="{% url 'account_logout' %}" novalidate>
 	{% csrf_token %}
     {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
@@ -17,7 +17,9 @@
 			<h4 class="card-title">{% trans "LOGOUT" %}</h4>
 		</div>
 		<div class="card-body ">
-            <p class="card-description text-center">Do you wish to logout?</p>
+            <br>
+            <br>
+            <p class="card-description text-center"><strong>Do you wish to logout?</strong></p>
         </div>
         
         <div class="card-footer justify-content-center">

@@ -101,7 +101,10 @@ TEMPLATES = [
 ACCOUNT_FORMS = {
     'login': 'users.forms.MyCustomLoginForm',
     'signup': 'users.forms.MyCustomSignupForm',
+    'reset_password': 'users.forms.MyCustomResetPassword',
 }
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
