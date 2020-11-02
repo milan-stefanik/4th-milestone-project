@@ -103,6 +103,7 @@ ACCOUNT_FORMS = {
     'signup': 'users.forms.MyCustomSignupForm',
     'reset_password': 'users.forms.MyCustomResetPasswordForm',
     'reset_password_from_key': 'users.forms.MyCustomResetPasswordKeyForm',
+    'add_email': 'users.forms.MyCustomAddEmailForm',
 }
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

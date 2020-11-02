@@ -1,6 +1,8 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
-from allauth.account.forms import LoginForm, SignupForm, ResetPasswordForm, ResetPasswordKeyForm
+from allauth.account.forms import (LoginForm, SignupForm,
+                                   ResetPasswordForm, ResetPasswordKeyForm,
+                                   AddEmailForm)
 from crispy_forms.helper import FormHelper
 
 
@@ -54,6 +56,20 @@ class MyCustomResetPasswordForm(ResetPasswordForm):
 class MyCustomResetPasswordKeyForm(ResetPasswordKeyForm):
     def __init__(self, *args, **kwargs):
         super(MyCustomResetPasswordKeyForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_show_labels = True
+        self.helper.label_class = 'bmd-label-floating'
+        for fieldname, field in self.fields.items():
+            field.widget.attrs.update({
+                'placeholder': '',
+                'class': 'form-control',
+            })
+            del field.widget.attrs['placeholder']
+
+
+class MyCustomAddEmailForm(AddEmailForm):
+    def __init__(self, *args, **kwargs):
+        super(MyCustomAddEmailForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_show_labels = True
         self.helper.label_class = 'bmd-label-floating'

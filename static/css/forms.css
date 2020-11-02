@@ -3,6 +3,16 @@
     background: #00bcd4 !important; 
 }
 
+.form-check .form-check-input:checked ~ .circle .check {
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+.form-check .form-check-input:checked ~ .circle {
+    border-color: rgba(0, 0, 0, 0.54) !important;
+}
+
+
 .card-body {
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -22,4 +32,8 @@
 .form-link:hover {
     color: #00bcd4;
     text-decoration: underline;
+}
+
+.small {
+    font-size: 0.8rem !important; 
 }
