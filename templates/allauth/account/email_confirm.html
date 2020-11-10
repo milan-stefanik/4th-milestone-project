@@ -5,10 +5,7 @@
 
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
 
-
-
 {% block inner_content %}
-   
     <div class="card card-hidden">
 		<div class="card-header card-header-info text-center">
 			<h4 class="card-title">{% trans "CONFIRM E-MAIL" %}</h4>
@@ -25,8 +22,7 @@
             <div class="card-footer justify-content-center">
                 <form class="form" method="POST" action="{% url 'account_confirm_email' confirmation.key %}" novalidate>
                     {% csrf_token %}
-                    
-                        <button class="btn btn-info btn-primary btn-raised" type="submit">{% trans "Confirm" %}</button>
+                    <button class="btn btn-info btn-primary btn-raised" type="submit">{% trans "Confirm" %}</button>
                 </form> 
             </div>
         {% else %}

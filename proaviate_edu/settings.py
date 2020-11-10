@@ -98,13 +98,21 @@ TEMPLATES = [
     },
 ]
 
+# Customized allauth user forms
+# look at users/forms.py
 ACCOUNT_FORMS = {
     'login': 'users.forms.MyCustomLoginForm',
     'signup': 'users.forms.MyCustomSignupForm',
     'reset_password': 'users.forms.MyCustomResetPasswordForm',
     'reset_password_from_key': 'users.forms.MyCustomResetPasswordKeyForm',
     'add_email': 'users.forms.MyCustomAddEmailForm',
+    'change_password': 'users.forms.MyCustomChangePasswordForm',
+    'set_password': 'users.forms.MyCustomSetPasswordForm',
 }
+
+# Disable new users signup
+# look at users/adapter.py
+ACCOUNT_ADAPTER = 'users.adapter.NoNewUsersAccountAdapter'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
